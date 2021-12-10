@@ -19,14 +19,12 @@ def browser(request):
         options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
         browser = webdriver.Chrome(options=options)
-        browser.implicitly_wait(10)
     elif browser_name == "firefox":
         print("\nstart firefox browser for test..")
         fp = webdriver.FirefoxProfile()
         fp.set_preference("intl.accept_languages", user_language)
         #fp.set_preference()
         browser = webdriver.Firefox(firefox_profile=fp)# firefox_profile=fp, options=options
-        browser.implicitly_wait(10)
     else:
         raise pytest.UsageError("--browser_name should be chrome or firefox or opera")
     yield browser
