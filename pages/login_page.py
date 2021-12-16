@@ -12,16 +12,13 @@ class LoginPage(BasePage):
 
     def should_be_login_url(self):
         # реализуйте проверку на корректный url адрес
-        #assert "login" in self.browser.current_url
-        if "login" in self.browser.current_url:
-            assert True, "подстрока login отсутствует в текущем url браузера"
+        assert "login" in self.browser.current_url, "Подстрока login отсутствует в текущем url браузера"
 
     def should_be_login_form(self):
         # реализуйте проверку, что есть форма логина
-        login_form = self.is_element_present(*LoginPageLocators.LOGIN_FORM), "Отсутствует форма для логина"
-        assert True
+        assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "Отсутствует форма для логина"
 
     def should_be_register_form(self):
         # реализуйте проверку, что есть форма регистрации на странице
-        reg_form = self.is_element_present(*LoginPageLocators.REG_FORM), "Отсутствует форма для логина"
-        assert True
+        assert self.is_element_present(*LoginPageLocators.REG_FORM), "Отсутствует форма для регистрации"
+        
