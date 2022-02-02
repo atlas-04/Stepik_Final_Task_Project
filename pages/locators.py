@@ -17,6 +17,5 @@ class LoginPageLocators():
     LOGIN_BUTTON = (By.CSS_SELECTOR, "#login_form > button")
     FORGOT_PASSWORD_BUTTON = (By.CSS_SELECTOR, "#login_form > p > a")
     
-    
-
-    
+class CatalogPageLocators():
+    BASKET_BUTTON = (By.XPATH, '//*[@id="add_to_basket_form"]/button')
