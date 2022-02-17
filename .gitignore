@@ -1,0 +1,9 @@
+$ cat .gitignore
+*.pyc
+.pytest_cache/
+__pycache__/
+
+# virtualenv
+.venv
+venv/
+ENV/
