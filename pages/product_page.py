@@ -16,8 +16,17 @@ class ProductPage(BasePage):
     def name_equal(self):
         item_basket = self.browser.find_element(*CatalogPageLocators.ITEM_IN_BASKET)
         item_name_in_basket = item_basket.get_attribute('innerHTML')
-        print(item_name_in_basket)
         item_page = self.browser.find_element(*CatalogPageLocators.ITEM_ON_PAGE)
         item_name_on_page = item_page.get_attribute('innerHTML')
-        print(item_name_on_page)
-        assert item_name_in_basket == item_name_on_page
+        assert item_name_in_basket == item_name_on_page, "Не совпадает цена товара в корзине и на странице"
+
+    def should_be_basket_price(self):
+        assert self.is_element_present(*CatalogPageLocators.PRICE_MESSAGE), "Price in the cart message is not presented"
+
+    def price_equal(self):
+        basket_price = self.browser.find_element(*CatalogPageLocators.PRICE_IN_BASKET)
+        item_price_in_basket = basket_price.get_attribute('innerHTML')
+        page_price = self.browser.find_element(*CatalogPageLocators.PRICE_ON_PAGE)
+        item_price_on_page = page_price.get_attribute('innerHTML')
+        assert item_price_in_basket == item_price_on_page, "Нихуя"
+

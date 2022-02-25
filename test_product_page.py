@@ -11,3 +11,5 @@ def test_guest_can_add_product_to_basket(browser):
     page.solve_quiz_and_get_code()
     page.should_be_item_in_basket()
     page.name_equal()
+    page.should_be_basket_price()
+    page.price_equal()
