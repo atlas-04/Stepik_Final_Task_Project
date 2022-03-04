@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 import math
 from .locators import BasePageLocators
+from .locators import BasketPageLocators
 
 class BasePage():
     def __init__(self, browser, url, timeout=10):
@@ -57,3 +58,7 @@ class BasePage():
         except TimeoutException:
             return False
         return True
+
+    def go_to_basket_page(self):
+        login_link = self.browser.find_element(*BasketPageLocators.SHOW_BASKET_BUTTON)
+        login_link.click()

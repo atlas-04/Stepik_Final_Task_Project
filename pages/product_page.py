@@ -1,6 +1,7 @@
 from .base_page import BasePage
 from .locators import CatalogPageLocators
 
+
 class ProductPage(BasePage):
 
     def should_not_be_success_message(self):
