@@ -27,7 +27,8 @@ class ProductPage(BasePage):
         item_name_in_basket = item_basket.get_attribute('innerHTML')
         item_page = self.browser.find_element(*CatalogPageLocators.ITEM_ON_PAGE)
         item_name_on_page = item_page.get_attribute('innerHTML')
-        assert item_name_in_basket == item_name_on_page, "Не совпадает цена товара в корзине и на странице"
+        assert item_name_in_basket == item_name_on_page, \
+            "The name of the product in the cart and on the page does not match"
 
     def should_be_basket_price(self):
         assert self.is_element_present(*CatalogPageLocators.PRICE_MESSAGE), "Price in the cart message is not presented"
@@ -37,5 +38,5 @@ class ProductPage(BasePage):
         item_price_in_basket = basket_price.get_attribute('innerHTML')
         page_price = self.browser.find_element(*CatalogPageLocators.PRICE_ON_PAGE)
         item_price_on_page = page_price.get_attribute('innerHTML')
-        assert item_price_in_basket == item_price_on_page, "Нихуя"
-
+        assert item_price_in_basket == item_price_on_page, \
+            "The price of the product in the cart and on the page does not match"

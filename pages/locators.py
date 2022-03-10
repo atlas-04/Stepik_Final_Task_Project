@@ -1,10 +1,10 @@
 from selenium.webdriver.common.by import By
 
+
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
-
 
 
 class MainPageLocators:
@@ -32,6 +32,7 @@ class CatalogPageLocators:
     PRICE_MESSAGE = (By.XPATH, '//*[@id="messages"]/div[3]/div/p[1]')
     PRICE_IN_BASKET = (By.XPATH, '//*[@id="messages"]/div[3]/div/p[1]/strong')
     PRICE_ON_PAGE = (By.CSS_SELECTOR, 'div.col-sm-6.product_main > p.price_color')
+
 
 class BasketPageLocators:
     SHOW_BASKET_BUTTON = (By.XPATH, "//header/div[1]/div/div[2]/span/a")
